@@ -1,11 +1,11 @@
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, TextareaControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import VideoHelpPanel from './controls/VideoHelpPanel';
 
 const Edit = ({ attributes, setAttributes }) => {
-  const { shortcode } = attributes;
+  const { title, shortcode } = attributes;
   const blockProps = useBlockProps({ className: 'request' });
 
   // Массив с доступными формами
@@ -43,6 +43,17 @@ const Edit = ({ attributes, setAttributes }) => {
       </InspectorControls>
 
       <div {...blockProps}>
+
+        <div className="block-title">
+          <TextareaControl
+            label="Title"
+            value={title}
+            onChange={(value) => setAttributes({ title: value })}
+            placeholder={__('Add title...', 'theme')}
+            rows={3}
+          />
+        </div>
+
         {shortcode ? (
           <div className="cf7-preview" style={{
             padding: '20px',

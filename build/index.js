@@ -13,6 +13,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  title: {
+    type: 'string',
+    default: 'Leave a request and we will contact you during business hours.'
+  },
   shortcode: {
     type: 'string',
     default: ''
@@ -109,6 +113,7 @@ const Edit = ({
   setAttributes
 }) => {
   const {
+    title,
     shortcode
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -159,7 +164,17 @@ const Edit = ({
     }
   }, shortcode)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, shortcode ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "block-title"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
+    label: "Title",
+    value: title,
+    onChange: value => setAttributes({
+      title: value
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add title...', 'theme'),
+    rows: 3
+  })), shortcode ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cf7-preview",
     style: {
       padding: '20px',
@@ -252,12 +267,14 @@ const Save = ({
   attributes
 }) => {
   const {
+    title,
     shortcode
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: 'request'
   });
   if (!shortcode) return null;
+  const formattedTitle = title.replace(/\n/g, '<br />');
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -265,8 +282,11 @@ const Save = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "line-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "h2"
-  }, "Leave a request and we will contact ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), "you during business hours."), shortcode)));
+    className: "h2",
+    dangerouslySetInnerHTML: {
+      __html: formattedTitle
+    }
+  }), shortcode)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
