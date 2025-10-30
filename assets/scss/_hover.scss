@@ -1,0 +1,17 @@
+@media (hover: hover) and (pointer: fine) {
+  .header .header-menu .menu-item a:hover {
+    color: var(--accent-color);
+  }
+
+  .header .header-lang .menu-item:hover {
+    background-color: var(--accent-color);
+    a {
+      color: $white;
+    }
+  }
+
+  .main .line-items .line-item:hover:before {
+    height: calc(100% + 20px);
+    background-color: var(--accent-2-color);
+  }
+}

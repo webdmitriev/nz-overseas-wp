@@ -1,0 +1,124 @@
+.request {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-block: 60px 100px;
+  z-index: 50;
+  .h2 {
+    margin-bottom: 60px;
+  }
+  .wpcf7-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    .group-input,
+    .group-submit {
+      display: block;
+      width: 100%;
+      max-width: calc(25% - 16px);
+      input {
+        display: block;
+        width: 100%;
+      }
+      .wpcf7-not-valid-tip {
+        font-size: 14px;
+      }
+    }
+    .group-input {
+      input {
+        min-height: 54px;
+        padding: 12px;
+        font-family: var(--font-primary);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.2;
+        color: var(--text-color);
+        background-color: var(--menu-footer);
+        border-radius: 16px;
+        border: 2px solid transparent;
+        &::placeholder {
+          color: var(--text-color);
+        }
+      }
+    }
+    .group-submit {
+      position: relative;
+      max-width: 308px;
+      margin-left: 20px;
+      input {
+        min-height: 54px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.2;
+        color: $white;
+        background-color: var(--accent-2-color);
+        border-radius: 16px;
+      }
+      .wpcf7-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: var(--accent-2-color);
+}
+
+@media (max-width: 1440px) {
+  .request .wpcf7-form .group-input {
+    max-width: calc(23% - 16px);
+  }
+  .request .wpcf7-form .group-submit {
+    max-width: 294px;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 1100px) {
+  .request .wpcf7-form .group-submit {
+    max-width: 260px;
+    margin-left: 0px;
+  }
+}
+@media (max-width: 991px) {
+  .request .h2 {
+    margin-bottom: 45px;
+  }
+  .request .wpcf7-form .group-input,
+  .request .wpcf7-form .group-submit {
+    max-width: calc(50% - 16px);
+  }
+}
+@media (max-width: 767px) {
+  .request .h2 br {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .request {
+    padding-block: 40px 60px;
+  }
+  .request .h2 {
+    margin-bottom: 30px;
+  }
+  .request .wpcf7-form .group-input,
+  .request .wpcf7-form .group-submit {
+    max-width: 100%;
+  }
+}
+@media (max-width: 460px) {
+}
+@media (max-width: 400px) {
+}

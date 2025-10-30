@@ -1,0 +1,8 @@
+// Главный файл стилей
+.editor-styles-wrapper.block-editor-writing-flow {
+  @import "./admin/reset";
+}
+@import "./admin/global";
+
+// Импортируем стили блоков
+// Они будут добавлены автоматически через импорты в JavaScript

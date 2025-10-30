@@ -1,0 +1,204 @@
+.header {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  display: block;
+  width: 100%;
+  max-width: 1920px;
+  transform: translateX(-50%);
+  z-index: 90;
+  .line-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+  }
+  .header-logotype {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 10px;
+    width: 280px;
+    height: 70px;
+    img {
+      display: block;
+      width: 140px;
+      height: inherit;
+      object-fit: contain;
+    }
+  }
+  .header-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: calc(100% - 740px);
+    width: 100%;
+    .menu-item {
+      display: block;
+      a {
+        display: block;
+        width: 100%;
+        font-family: var(--font-primary);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 36px;
+        color: var(--menu-color);
+        transition: all 0.4s ease;
+      }
+    }
+  }
+  .header-lang {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+    max-width: max-content;
+    padding: 4px 10px;
+    background-color: var(--ice-color);
+    border-radius: 100px;
+    .menu-item {
+      display: block;
+      padding: 4px 12px;
+      transition: all 0.4s ease;
+      border-radius: 100px;
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-right: 38px;
+        font-family: var(--font-primary);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--menu-color);
+        transition: all 0.4s ease;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 28px;
+          height: 20px;
+        }
+      }
+      &.current-menu-item a {
+        color: var(--accent-color);
+      }
+      &.en a:after {
+        background: url("../img/header/flag-en.svg") center / contain no-repeat;
+      }
+      &.sp a:after {
+        background: url("../img/header/flag-sp.svg") center / contain no-repeat;
+      }
+      &.ru a:after {
+        background: url("../img/header/flag-ru.svg") center / contain no-repeat;
+      }
+    }
+  }
+  .burger {
+    position: relative;
+    display: none;
+    width: 36px;
+    height: 36px;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #222222;
+      border-radius: 8px;
+      transform: translateY(-50%);
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 8px;
+        background-color: #222222;
+        transition: all 0.4s ease;
+      }
+      &:before {
+        top: -9px;
+      }
+      &:after {
+        top: 9px;
+      }
+    }
+    &.active span {
+      height: 0;
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &:after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+  .header .header-lang {
+    gap: 12px;
+  }
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+  .header .header-logotype img {
+    width: 100px;
+  }
+
+  .header .header-lang .menu-item {
+    padding: 2px 6px;
+  }
+  .header .header-lang .menu-item a {
+    padding-right: 30px;
+    font-size: 15px;
+  }
+  .header .header-lang .menu-item a:after {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media (max-width: 576px) {
+  .header {
+    top: 8px;
+  }
+  .header .header-logotype {
+    width: 100px;
+    height: auto;
+  }
+  .header .header-logotype img {
+    width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  .header .header-lang .menu-item {
+    padding: 2px 2px;
+  }
+  .header .header-lang .menu-item a {
+    padding-right: 22px;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .header .header-lang .menu-item a:after {
+    width: 18px;
+    height: 14px;
+  }
+}
+@media (max-width: 400px) {
+}

@@ -1,0 +1,94 @@
+.editor-styles-wrapper.block-editor-writing-flow a {
+  text-decoration: none;
+}
+.editor-styles-wrapper.block-editor-writing-flow a:active, .editor-styles-wrapper.block-editor-writing-flow a:hover {
+  outline: 0;
+}
+.editor-styles-wrapper.block-editor-writing-flow ul,
+.editor-styles-wrapper.block-editor-writing-flow li {
+  list-style: none;
+  list-style-type: none;
+}
+.editor-styles-wrapper.block-editor-writing-flow h2,
+.editor-styles-wrapper.block-editor-writing-flow h3,
+.editor-styles-wrapper.block-editor-writing-flow h4,
+.editor-styles-wrapper.block-editor-writing-flow h5,
+.editor-styles-wrapper.block-editor-writing-flow h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+.editor-styles-wrapper.block-editor-writing-flow html,
+.editor-styles-wrapper.block-editor-writing-flow *,
+.editor-styles-wrapper.block-editor-writing-flow *:before,
+.editor-styles-wrapper.block-editor-writing-flow *:after {
+  box-sizing: border-box;
+}
+.editor-styles-wrapper.block-editor-writing-flow :focus {
+  outline: 0;
+}
+.editor-styles-wrapper.block-editor-writing-flow img,
+.editor-styles-wrapper.block-editor-writing-flow audio,
+.editor-styles-wrapper.block-editor-writing-flow video {
+  max-width: 100%;
+  height: auto;
+}
+.editor-styles-wrapper.block-editor-writing-flow audio,
+.editor-styles-wrapper.block-editor-writing-flow canvas,
+.editor-styles-wrapper.block-editor-writing-flow iframe,
+.editor-styles-wrapper.block-editor-writing-flow video,
+.editor-styles-wrapper.block-editor-writing-flow img,
+.editor-styles-wrapper.block-editor-writing-flow svg {
+  vertical-align: middle;
+}
+.editor-styles-wrapper.block-editor-writing-flow iframe {
+  border: 0;
+}
+.editor-styles-wrapper.block-editor-writing-flow textarea {
+  resize: none;
+  overflow: auto;
+  vertical-align: top;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+.editor-styles-wrapper.block-editor-writing-flow input,
+.editor-styles-wrapper.block-editor-writing-flow textarea,
+.editor-styles-wrapper.block-editor-writing-flow select,
+.editor-styles-wrapper.block-editor-writing-flow button {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+}
+.editor-styles-wrapper.block-editor-writing-flow button,
+.editor-styles-wrapper.block-editor-writing-flow input {
+  line-height: normal;
+}
+.editor-styles-wrapper.block-editor-writing-flow table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.editor-styles-wrapper.block-editor-writing-flow td,
+.editor-styles-wrapper.block-editor-writing-flow th {
+  padding: 0;
+  text-align: left;
+}
+
+.theme-button {
+  display: block;
+  width: 100%;
+  max-width: max-content;
+  padding: 6px 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: #222222;
+  background-color: red;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}/*# sourceMappingURL=admin-index.css.map */
