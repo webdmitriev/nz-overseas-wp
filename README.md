@@ -1,13 +1,26 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# NZ Overseas - Wordpress with Gutenberg
 
-Gutenberg blocks - js
-===
+---
 
 ## 🚀 Возможности
-- Добавлены Gutenberg custom блоки (дополняются)
-- Добавлено глобальная типографика для блоков (неразрывные пробелы для предлогов)
 
+- Editing custom gutenberg blocks
 
 ## 🛠 Технологии
-- Wordpress, Gutenberg
-- JS, SCSS
+
+- HTML, JS, SCSS, PHP
+- Animations
+
+## 📸 Скриншоты
+
+| Home                                                                                  |
+| ------------------------------------------------------------------------------------- |
+| ![Onboarding](https://api.webdmitriev.com/wp-content/uploads/2025/10/nz-overseas.png) |
+
+## ⚙️ Установка
+
+1. Клонируйте репозиторий:
+
+```bash
+git clone https://github.com/webdmitriev/nz-overseas-wp
+```
