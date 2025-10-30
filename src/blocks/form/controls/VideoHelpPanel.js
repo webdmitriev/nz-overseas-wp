@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 
 const VideoHelpPanel = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const videoPath = `${themeData.uploadUrl}/default.mov`;
+  const videoPath = `${themeData.uploadUrl}/form.mov`;
 
   return (
     <>

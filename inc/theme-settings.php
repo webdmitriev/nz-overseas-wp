@@ -1,14 +1,35 @@
 <?php
 // Добавляем в меню
 function theme_settings_page() {
+  // Главное меню
   add_menu_page(
-    'Theme Settings',          // Заголовок страницы
-    'Theme Settings',          // Название в меню
-    'manage_options',          // Права доступа
-    'theme-settings',          // SLUG страницы
-    'theme_settings_page_content', // Функция отображения
-    'dashicons-admin-tools', // Иконка (опционально)
-    80                         // Позиция в меню (опционально)
+    'Theme Settings',
+    'Theme Settings',
+    'manage_options',
+    'theme-settings',
+    'theme_settings_page_content',
+    'dashicons-admin-tools',
+    80
+  );
+
+  // Подменю - Основные настройки
+  add_submenu_page(
+    'theme-settings',
+    'Theme Settings',
+    'Settings',
+    'manage_options',
+    'theme-settings',
+    'theme_settings_page_content'
+  );
+
+  // Подменю - Видео инструкции
+  add_submenu_page(
+    'theme-settings',
+    'Video Instructions',
+    'Video Instructions',
+    'manage_options',
+    'theme-instructions',
+    'theme_instructions_page_content'
   );
 }
 add_action('admin_menu', 'theme_settings_page');
@@ -179,6 +200,125 @@ function theme_settings_page_content() {
     </style>
     <?php
 }
+
+
+
+// Функция для страницы с видео инструкциями
+function theme_instructions_page_content() {
+    // Пути к видео файлам
+    $videos = array(
+        'main' => array(
+            'title' => 'Main Setup',
+            'path' => get_template_directory_uri() . '/admin/instructions/main.mov',
+            'description' => 'Main block'
+        ),
+        'form' => array(
+            'title' => 'Form Configuration',
+            'path' => get_template_directory_uri() . '/admin/instructions/form.mov',
+            'description' => 'Form block'
+        ),
+        'global' => array(
+            'title' => 'Global Settings',
+            'path' => get_template_directory_uri() . '/admin/instructions/global.mov',
+            'description' => 'Global theme settings and options'
+        ),
+        'menu' => array(
+            'title' => 'Menu Management',
+            'path' => get_template_directory_uri() . '/admin/instructions/menu.mov',
+            'description' => 'How to manage menus and navigation'
+        )
+    );
+    ?>
+    <div class="wrap theme-instructions-wrap">
+        <h1>🎬 Video Instructions</h1>
+        
+        <div class="instructions-intro">
+            <p>Welcome to the video instructions section. Here you'll find helpful tutorials on how to use various theme features.</p>
+        </div>
+
+        <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-top: 30px;">
+            <?php foreach ($videos as $key => $video): ?>
+                <div class="video-card" style="background: #fff; border: 1px solid #ccd0d4; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="margin-top: 0; color: #2271b1;"><?php echo esc_html($video['title']); ?></h3>
+                    
+                    <div class="video-player" style="margin: 15px 0;">
+                        <video 
+                            controls 
+                            style="width: 100%; max-width: 100%;height: inherit;aspect-ratio: 16 / 9; border-radius: 4px;"
+                            poster="<?php echo get_template_directory_uri(); ?>/admin/instructions/<?php echo $key; ?>-preview.jpg"
+                        >
+                            <source src="<?php echo esc_url($video['path']); ?>" type="video/mp4">
+                            <source src="<?php echo esc_url($video['path']); ?>" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <p class="video-description" style="color: #666; font-size: 14px; line-height: 1.4;">
+                        <?php echo esc_html($video['description']); ?>
+                    </p>
+                    
+                    <!-- <div class="video-actions" style="margin-top: 15px;">
+                        <a href="<?php echo esc_url($video['path']); ?>" 
+                           download 
+                           class="button button-secondary"
+                           style="text-decoration: none;">
+                            📥 Download Video
+                        </a>
+                    </div> -->
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <?php if (is_file(get_template_directory() . '/admin/instructions/readme.txt')): ?>
+            <div class="additional-help" style="margin-top: 40px; padding: 20px; background: #f6f7f7; border-radius: 8px;">
+                <h3>📋 Additional Resources</h3>
+                <p>For written instructions and troubleshooting, check out our documentation:</p>
+                <a href="<?php echo get_template_directory_uri() . '/admin/instructions/readme.txt'; ?>" 
+                   target="_blank" 
+                   class="button button-primary">
+                    📖 Open Documentation
+                </a>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <style>
+    .theme-instructions-wrap {
+        max-width: 1400px;
+    }
+    
+    .instructions-intro {
+        background: #f0f6ff;
+        border-left: 4px solid #2271b1;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    
+    .video-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .video-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .video-player video:focus {
+        outline: 2px solid #2271b1;
+        outline-offset: 2px;
+    }
+    
+    @media (max-width: 768px) {
+        .video-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+    </style>
+    <?php
+}
+
+
 
 // styles
 function theme_settings_enqueue_styles($hook) {
