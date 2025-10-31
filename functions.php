@@ -144,7 +144,7 @@ function webdmitriev_scripts() {
 	wp_style_add_data( 'webdmitriev-style', 'rtl', 'replace' );
 
 	wp_enqueue_style( 'webdmitriev-app', get_template_directory_uri() . '/assets/scss/app.css', array(), _S_VERSION );
-	wp_enqueue_style( 'webdmitriev-css', get_template_directory_uri() . '/build/style-index.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'webdmitriev-css', get_template_directory_uri() . '/build/style-index.css', array(), _S_VERSION );
 
 	wp_deregister_script('jquery');
   wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-3.6.1.min.js', false, null, false);
