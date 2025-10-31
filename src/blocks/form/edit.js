@@ -11,9 +11,9 @@ const Edit = ({ attributes, setAttributes }) => {
   // Массив с доступными формами
   const availableForms = [
     { label: __('-- Select Form --', 'theme'), value: '' },
-    { label: __('Form - En', 'theme'), value: '[contact-form-7 id="8416c02" title="form-en"]' },
-    { label: __('Form - Sp', 'theme'), value: '[contact-form-7 id="3d00121" title="form-sp"]' },
-    { label: __('Form - Ru', 'theme'), value: '[contact-form-7 id="c42a913" title="form-ru"]' },
+    { label: __('Form - En', 'theme'), value: '[contact-form-7 id="52d6e5a" title="form-en"]' },
+    { label: __('Form - Sp', 'theme'), value: '[contact-form-7 id="8ea278c" title="form-sp"]' },
+    { label: __('Form - Ru', 'theme'), value: '[contact-form-7 id="66b0a5f" title="form-ru"]' },
   ];
 
   return (
